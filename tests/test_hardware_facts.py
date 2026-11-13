@@ -56,6 +56,7 @@ SENSOR_NOISE = {
 DIRECT = {
     "jumper.jump": (make_velocity_env_cfg, ("base_ang_vel", "projected_gravity")),
     "jumper.ref_free_jump": (make_velocity_env_cfg, ("base_ang_vel", "projected_gravity")),
+    "jumper.spin_jump": (make_velocity_env_cfg, ("base_ang_vel", "projected_gravity")),
     "jumper.dance": (
         make_tracking_env_cfg,
         ("base_ang_vel", "projected_gravity", "actuator_force"),

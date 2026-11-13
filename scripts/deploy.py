@@ -392,7 +392,10 @@ def compile_extension(cargo: str, verbose: bool) -> Path:
     quiet = [] if verbose else ["--quiet"]
     run([cargo, "build", "--release", "--no-default-features", "--features", "py", *quiet],
         cwd=CRATE)
-    for name in ("libmjrl_fsm.so", "libmjrl_fsm.dylib"):
+    # A Windows cdylib carries no `lib` prefix, so the same crate lands as
+    # `mjrl_fsm.dll` there; the caller files it under `extension_file`'s
+    # platform name (`controller.pyd` on win).
+    for name in ("libmjrl_fsm.so", "libmjrl_fsm.dylib", "mjrl_fsm.dll"):
         built = CRATE / "target/release" / name
         if built.is_file():
             return built

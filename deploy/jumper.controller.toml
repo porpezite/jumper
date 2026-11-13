@@ -116,6 +116,15 @@ enter = "@initial"
 when = "button:jump"
 enter = "jump"
 
+# The whirlwind jump, right beside the jump it comes from: the operator can ask
+# for it, and cannot while tilted or blind. Unlike the jump it carries no
+# recording -- the policy jumps when the mode takes over -- so nothing releases
+# the latch for it: it stays until the operator toggles it off, jumping again
+# each time the robot is back at home.
+[[fsm.rule]]
+when = "button:spin_jump"
+enter = "spin_jump"
+
 # Same place in the order and for the same reason: the operator can ask for a
 # dance, and cannot ask for one while the robot is tilted or blind. Each of
 # these releases itself when its recording ends -- see

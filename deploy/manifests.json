@@ -126,6 +126,15 @@
           "keys": {"key": ["key_space"], "on": "toggle", "from": ["locomotion"]}
         },
 
+        "spin_jump": {
+          "task": "jumper.spin_jump",
+          "_note": "旋风跳, the whirlwind jump: rise, full mid-air yaw turn, landing. Reference-free like jumper.ref_free_jump -- the policy jumps when the mode takes over and needs no recording, no clock and nothing a robot cannot measure. The high_jump recording shaped it while training, as a fading feedforward, and is not in the bundle. Trained as the Crab Robot Challenge 2026 entry.",
+          "policy": "tasks/jumper/spin_jump/out/example",
+          "_reached_by": "L3, or G (keypad 5 also works). From locomotion only. No recording to end, so the mode does not release itself: left latched the robot whirlwind-jumps again each time it is back at home, and pressing L3 (G) once more hands back to walking. X and Y were not taken: their physical mapping is unresolved in the vocabulary, and a motion this quick cannot afford a swapped button.",
+          "pad": {"button": "L3", "on": "toggle", "from": ["locomotion"]},
+          "keys": {"key": ["key_g", "keypad_5"], "on": "toggle", "from": ["locomotion"]}
+        },
+
         "claw_left": {
           "task": "jumper.five_foot",
           "_note": "Walking on five feet with the front-left arm carried as a claw, the side the policy was trained on. The `hook` is required rather than a formality: tasks/jumper/five_foot/deploy/lib.rs is also what closes the claw -- `claw_left`, LT or Space, as far as it is held -- and what holds the arm out while the d-pad's up, down or left (Shift, Alt, Ctrl) is held.",
