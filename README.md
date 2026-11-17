@@ -18,13 +18,13 @@
 
 | 皮肤 | 梗 | 设计亮点 | 概念图 |
 |---|---|---|---|
-| 🦫 卡皮巴拉 | 头顶橘子 | 水豚棕壳 + 呆滞小耳 + 带叶橘子 + 口鼻贴片 | [图](skins/ai/ai_skin_capybara_tangerine.png) |
-| 🐱 妙脆角小猫 | 三角脆片猫 | 亮橙三角脸 + 折耳 + 白胡须 + 粉肉垫钳 | [图](skins/ai/ai_skin_dorito_cat.png) |
-| 🦞 打工人龙虾 | AI 打工图腾 | 深红龙虾壳 + 长触须 + 工牌挂绳 + 困倦眼睑 | [图](skins/ai/ai_skin_lobster_worker.png) |
-| 🦝 背手负鼠 | 大爷踱步 | 灰褐绒毛 + 粉耳粉尾 + 双钳真·背在身后 | [图](skins/ai/ai_skin_possum_elder.png) |
-| 🐴 马年小金马 | 2026 丙午马年 | 金壳 + 栗色鬃毛脊冠 + 三缕马尾 + 红绳结铃铛 | [图](skins/ai/ai_skin_golden_horse.png) |
-| 😺 猫meme | 贱萌斜眼 | 黑白配色 + 屏幕超大斜眼 + 下垂嘴角 | [图](skins/ai/ai_skin_cat_meme.png) |
-| 🥒 酸黄瓜 | 自嘲顶流 | 墨绿疙瘩壳（64 颗凸起）+ 酸皱表情 | [图](skins/ai/ai_skin_pickle_sour.png) |
+| 🦫 卡皮巴拉 | 头顶橘子 | 水豚棕壳 + 呆滞小耳 + 带叶橘子 + 口鼻贴片 | ![](skins/ai/ai_skin_capybara_tangerine.png) |
+| 🐱 妙脆角小猫 | 三角脆片猫 | 亮橙三角脸 + 折耳 + 白胡须 + 粉肉垫钳 | ![](skins/ai/ai_skin_dorito_cat.png) |
+| 🦞 打工人龙虾 | AI 打工图腾 | 深红龙虾壳 + 长触须 + 工牌挂绳 + 困倦眼睑 | ![](skins/ai/ai_skin_lobster_worker.png) |
+| 🦝 背手负鼠 | 大爷踱步 | 灰褐绒毛 + 粉耳粉尾 + 双钳真·背在身后 | ![](skins/ai/ai_skin_possum_elder.png) |
+| 🐴 马年小金马 | 2026 丙午马年 | 金壳 + 栗色鬃毛脊冠 + 三缕马尾 + 红绳结铃铛 | ![](skins/ai/ai_skin_golden_horse.png) |
+| 😺 猫meme | 贱萌斜眼 | 黑白配色 + 屏幕超大斜眼 + 下垂嘴角 | ![](skins/ai/ai_skin_cat_meme.png) |
+| 🥒 酸黄瓜 | 自嘲顶流 | 墨绿疙瘩壳（64 颗凸起）+ 酸皱表情 | ![](skins/ai/ai_skin_pickle_sour.png) |
 
 皮肤文件：[`skins/*.skin`](skins/) · 真渲染预览：[`skins/previews/`](skins/previews/)
 
