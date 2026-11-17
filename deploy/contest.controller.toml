@@ -1,0 +1,81 @@
+# The contest bundle's state machine: locomotion + the official jump + the
+# whirlwind jump + the seven meme-skin gestures. Same safety structure as
+# jumper.controller.toml; the cascade names only the modes this bundle carries.
+
+[fsm]
+initial_state = "locomotion"
+warm_start_ref = "locomotion"
+safe_state = "safe"
+exclusive = true
+
+# 50 degrees, the controller's own limit; every gesture in this bundle stays far
+# inside it (the choreographies measure <= 8 deg of tilt).
+tilt_limit = 0.873
+state_timeout_ms = 100
+command_timeout_ms = 500
+mode_switch_ramp_s = 1.0
+pose_reach_tol = 0.10
+warm_start_duration_s = 2.0
+ramp_kp = 15.0
+ramp_kd = 0.8
+click_window_ms = 300
+
+[[fsm.state]]
+name = "safe"
+hold_current = true
+kd = 0.01
+
+[[fsm.rule]]
+when = "feedback_stale"
+enter = "safe"
+
+[[fsm.rule]]
+when = "tilted"
+enter = "safe"
+
+[[fsm.rule]]
+when = "in_state:safe"
+enter = "@initial"
+
+# The two jumps first: the official reference-guided jump, then the whirlwind.
+[[fsm.rule]]
+when = "button:jump"
+enter = "jump"
+
+[[fsm.rule]]
+when = "button:spin_jump"
+enter = "spin_jump"
+
+# The seven meme gestures, each a recorded clip that ends by itself and is left
+# early by the manifest's leave_motion (Menu / Ctrl on its own).
+[[fsm.rule]]
+when = "button:gesture_capybara_soak"
+enter = "gesture_capybara_soak"
+
+[[fsm.rule]]
+when = "button:gesture_dorito_stretch"
+enter = "gesture_dorito_stretch"
+
+[[fsm.rule]]
+when = "button:gesture_lobster_otaku"
+enter = "gesture_lobster_otaku"
+
+[[fsm.rule]]
+when = "button:gesture_possum_patrol"
+enter = "gesture_possum_patrol"
+
+[[fsm.rule]]
+when = "button:gesture_horse_prance"
+enter = "gesture_horse_prance"
+
+[[fsm.rule]]
+when = "button:gesture_catmeme_tilt"
+enter = "gesture_catmeme_tilt"
+
+[[fsm.rule]]
+when = "button:gesture_pickle_shiver"
+enter = "gesture_pickle_shiver"
+
+[[fsm.rule]]
+when = "always"
+enter = "locomotion"

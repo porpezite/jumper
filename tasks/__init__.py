@@ -69,6 +69,18 @@ from .jumper import posture  # noqa: F401,E402
 from .jumper import ref_free_jump  # noqa: F401,E402
 from .jumper import ripple  # noqa: F401,E402
 from .jumper import spin_jump  # noqa: F401,E402
+from .jumper import gesture_capybara_soak  # noqa: F401,E402
+from .jumper import gesture_dorito_stretch  # noqa: F401,E402
+from .jumper import gesture_lobster_otaku  # noqa: F401,E402
+from .jumper import gesture_possum_patrol  # noqa: F401,E402
+from .jumper import gesture_horse_prance  # noqa: F401,E402
+from .jumper import gesture_catmeme_tilt  # noqa: F401,E402
+from .jumper import gesture_pickle_shiver  # noqa: F401,E402
+
+
+
+
+
 from .jumper import swing  # noqa: F401,E402
 from .jumper import tetrapod  # noqa: F401,E402
 from .jumper import tripod  # noqa: F401,E402
