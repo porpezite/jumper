@@ -1,69 +1,104 @@
-![Jumper](docs/media/jumper-hero-en.png)
+![Whirlwind Jump](skins/ai/ai_app_hero.png)
 
-# Jumper
+# 🦀 螃蟹机器人 · 七梗皮肤 × 七专属动作
 
-**English** | [简体中文](README.zh.md)
+**螃蟹机器人开源动作大赛 2026 参赛作品** · Crab Robot Challenge 2026 entry
 
-**Jumper is a 22-DoF crab robot.** [View hardware →](docs/HARDWARE.md)
+基于开源六足螃蟹机器人 [Jumper](https://github.com/KingKongRobotics/jumper)（22 自由度），
+本仓库交付 **7 款网络热梗皮肤** + **7 个为每款皮肤量身训练的专属动作** + **旋风跳**，
+全部通过官方 `verify-package` 校验，可直接上传 [beunlimited.me](https://beunlimited.me/zh/simulator) 仿真。
 
-This repo is Jumper’s AI toolkit for appearance, motion, and scene creation. Open this repo in an AI coding assistant and try the prompts below.
+> 主题：好看 · 好玩 ·有用（Beautiful · Playful · Useful）
 
-> 🦀 **Get a free Jumper!** [Find out how →](https://beunlimited.me/zh/events/crab-robot-challenge-2026)
+---
 
-## One sentence to design an appearance
+## 🎨 七款皮肤（.skin，官方校验通过）
 
-> Design a warm sand ranger appearance for Jumper with coordinated body and limb colors, then export a `.skin`.
+每款都是**真 3D 雕刻件**（Blender 建模）+ 屏幕表情，不是贴图。点图看 AI 概念渲染。
 
-| | | |
-|:-:|:-:|:-:|
-| ![Warm sand ranger appearance](docs/media/design-warm-sand.png) | ![Silver armor appearance](docs/media/design-silver-armor.png) | ![Raphael Turtle appearance](docs/media/design-raphael.png) |
-| [**Warm sand ranger**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/skins/warm-sand-ranger-integrated-v2.skin) | [**Silver armor**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/skins/mecha-tripo-v3.skin) | [**Raphael Turtle**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/skins/raphael-turtle-v1.skin) |
+| 皮肤 | 梗 | 设计亮点 | 概念图 |
+|---|---|---|---|
+| 🦫 卡皮巴拉 | 头顶橘子 | 水豚棕壳 + 呆滞小耳 + 带叶橘子 + 口鼻贴片 | [图](skins/ai/ai_skin_capybara_tangerine.png) |
+| 🐱 妙脆角小猫 | 三角脆片猫 | 亮橙三角脸 + 折耳 + 白胡须 + 粉肉垫钳 | [图](skins/ai/ai_skin_dorito_cat.png) |
+| 🦞 打工人龙虾 | AI 打工图腾 | 深红龙虾壳 + 长触须 + 工牌挂绳 + 困倦眼睑 | [图](skins/ai/ai_skin_lobster_worker.png) |
+| 🦝 背手负鼠 | 大爷踱步 | 灰褐绒毛 + 粉耳粉尾 + 双钳真·背在身后 | [图](skins/ai/ai_skin_possum_elder.png) |
+| 🐴 马年小金马 | 2026 丙午马年 | 金壳 + 栗色鬃毛脊冠 + 三缕马尾 + 红绳结铃铛 | [图](skins/ai/ai_skin_golden_horse.png) |
+| 😺 猫meme | 贱萌斜眼 | 黑白配色 + 屏幕超大斜眼 + 下垂嘴角 | [图](skins/ai/ai_skin_cat_meme.png) |
+| 🥒 酸黄瓜 | 自嘲顶流 | 墨绿疙瘩壳（64 颗凸起）+ 酸皱表情 | [图](skins/ai/ai_skin_pickle_sour.png) |
 
-[Browse all skins](https://github.com/KingKongRobotics/jumper-design/tree/main/library/skins)
+皮肤文件：[`skins/*.skin`](skins/) · 真渲染预览：[`skins/previews/`](skins/previews/)
 
-## One sentence to train a motion
+## 🎬 七个专属动作（强化学习模仿训练）
 
-> Train a stable tripod gait for Jumper, replay and evaluate the result, then package it as an `.app`.
+每个动作是为对应皮肤手编的舞，用 PPO 模仿训练到收敛，导出 ONNX + 轨迹，可上真机。
 
-| | | |
-|:-:|:-:|:-:|
-| ![Jumper walking](docs/media/walk.gif) | ![Jumper changing posture](docs/media/posture.gif) | ![Jumper waving](docs/media/gesture.gif) |
-| **Walk** | **Posture** | **Gesture** |
-| ![Dance simulation](docs/media/dance.gif)<br>![Dance website showcase](docs/media/official-dance.gif) | ![Jump simulation](docs/media/jump.gif)<br>![Jump website showcase](docs/media/official-jump.gif) | ![Grasp simulation](docs/media/claw.gif)<br>![Grasp website showcase](docs/media/official-grasp.gif) |
-| **Dance** | **Jump** | **Grasp** |
+| 动作 | 皮肤 | 内容 | 训练 reward | 演示 |
+|---|---|---|---|---|
+| 泡温泉发呆 | 卡皮巴拉 | 低姿泡澡 + 晃悠 + 久坐发呆 | 28.0 | [视频](skins/gesture_capybara_soak.mp4) |
+| 伸懒腰 | 妙脆角 | 前爪远伸 + 拱背长保持 | 42.2 | [视频](skins/gesture_dorito_stretch.mp4) |
+| 上班摸鱼 | 龙虾 | 蔫蹲 + 叹气两下 + 单臂懒摆 | 43.8 | [视频](skins/gesture_lobster_otaku.mp4) |
+| 背手踱步 | 负鼠 | 双钳背身后 + 重心脉冲踱步 | 39.3 | [视频](skins/gesture_possum_patrol.mp4) |
+| 小马扬蹄 | 金马 | 原地弹跳 + 前蹄刨地 + 昂首 | 36.1 | [视频](skins/gesture_horse_prance.mp4) |
+| 贱萌歪头 | 猫meme | 左歪右歪 + 单爪轻点 + 好奇前倾 | 45.4 | [视频](skins/gesture_catmeme_tilt.mp4) |
+| 酸到发抖 | 酸黄瓜 | 全身抖动 + 酸蹲 + 再抖缓过来 | 35.0 | [视频](skins/gesture_pickle_shiver.mp4) |
 
-## One sentence to create a scene
+## 🌪️ 旋风跳（ headline 动作）
 
-> Create a park pump-track scene for Jumper with rolling terrain, trees and benches, then export a `.map`.
+原地起跳最高 **21 cm**（官方参考动作 12 cm 的 1.8 倍），空中转体姿态自调整，
+落地柔和（1310 次落地平均冲击 19 N），可连续起跳。策略只依赖机载传感器，真机可部署。
+[演示视频](skins/spin_jump_demo.mp4) · 触发：手柄 **L3** / 键盘 **G**
 
-| | | |
-|:-:|:-:|:-:|
-| ![Park pump track scene](docs/media/design-park.png) | ![Bedroom scene](docs/media/design-bedroom.png) | ![Soccer scene](docs/media/design-soccer.png) |
-| [**Park pump track**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/maps/park-pump-track.map) | [**Bedroom**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/maps/bedroom.map) | [**Soccer**](https://github.com/KingKongRobotics/jumper-design/blob/be74e0f2e5e2433d24a3a7b1c1aa0dbeae480356/library/maps/soccer.map) |
+---
 
-[Browse all maps](https://github.com/KingKongRobotics/jumper-design/tree/main/library/maps)
+## 🎮 一键运行（contest 包，10 模式）
 
-## Where to find things
+下载 [`skins/contest_v2.app`](skins/contest_v2.app)，上传到官网模拟器，或本地：
 
-| Resource | Purpose |
-|---|---|
-| [jumper-design](https://github.com/KingKongRobotics/jumper-design) | Appearance and scene creation; your assistant reads its [instructions](https://github.com/KingKongRobotics/jumper-design/blob/main/AGENTS.md) and uses its tools as needed. |
-| [Training tutorial](docs/TUTORIAL.md) | Motion training, replay and policy export in this repository. |
-| [Colab training](docs/COLAB.md) | GPU training in a notebook, checkpoint backup, resume, ONNX export and MP4 simulation replay. |
-| [Motion bundles](deploy/BUNDLE.md) | Package trained motions and their controller as an `.app`; see the [build guide](deploy/README.md) for prerequisites. |
-| [Project guide](docs/PROJECT_GUIDE.md) | Setup, current capabilities and further documentation. |
+```bash
+python scripts/play.py --app skins/contest_v2.app
+```
 
-Training builds on [mjlab](https://github.com/mujocolab/mjlab),
-[rsl_rl](https://github.com/leggedrobotics/rsl_rl), [MuJoCo](https://github.com/google-deepmind/mujoco)
-and [MuJoCo Warp](https://github.com/google-deepmind/mujoco_warp).
-Example appearance and scene images come from jumper-design; [image sources](docs/media/DESIGN_SOURCES.md)
-and [third-party notices](NOTICE) record attribution.
+| 模式 | 手柄 | 键盘 |
+|---|---|---|
+| 行走（默认）| 左摇杆 | WASD |
+| 官方跳 | A | 空格 |
+| 旋风跳 | L3 | G |
+| 泡温泉 / 伸懒腰 / 摸鱼 / 踱步 | 十字 ↑↓←→ | 1 2 3 4 |
+| 扬蹄 / 歪头 / 发抖 | LB / RB / Home | B / V / Q |
 
-## License
+手势播完自动回行走；**Menu / Ctrl** 单独按提前退出。
 
-Copyright 2026 KingKong Robotics.
+## 🛠️ 复现训练
 
-Maintainer-owned project materials are licensed under Apache-2.0. See [LICENSE](LICENSE),
-[NOTICE](NOTICE), and [licensing details](docs/PROJECT_GUIDE.md#license).
-Third-party materials remain under their respective terms, and generated outputs do not
-automatically inherit this repository's license.
+```bash
+python -m venv .venv && .venv/Scripts/activate   # Windows
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+pip install -e .
+python scripts/train.py --task jumper.gesture_capybara_soak --num_envs 1024 --headless
+python scripts/export.py --task jumper.gesture_capybara_soak --checkpoint <model.pt> --no-video
+python scripts/deploy.py --manifest contest --allow-incomplete
+```
+
+七个手势任务在 [`tasks/jumper/gesture_*`](tasks/jumper/)，编舞 clip 在各自 `media/*.npz`。
+
+## 📁 交付清单
+
+- `skins/*.skin` — 7 款官方校验皮肤
+- `skins/contest_v2.app` — 10 模式动作包
+- `skins/gesture_*.mp4` — 7 动作演示
+- `skins/ai/` — AI 概念渲染封面
+- `deploy/manifests.json` + `deploy/contest.controller.toml` — 模式与绑键
+
+## English summary
+
+Seven meme skins (capybara-with-tangerine, dorito cat, worker lobster, hands-behind
+possum, year-of-the-horse pony, cat meme, sour pickle) as verified `.skin` packages,
+plus seven PPO-imitation gestures trained per skin (rewards 28–45) and a 21 cm
+whirlwind jump, bundled in `contest_v2.app` (10 modes) for the Crab Robot Challenge
+2026. Built on the open-source Jumper hexapod; all packages pass the official
+`verify-package --mujoco` check.
+
+---
+
+*上游项目 [KingKongRobotics/jumper](https://github.com/KingKongRobotics/jumper) · Apache-2.0。
+本分支新增内容同样 Apache-2.0。*
